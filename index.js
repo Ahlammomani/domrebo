@@ -1,28 +1,18 @@
-const Afruits = ['apple', 'banana', 'cherry', 'Strawberry', 'orange'];
+let fruits=["apple" , "strawberry","banana","charry","orange"];
+ let img_array=["apple.jpg","strawberry.jpg","banana.jpg","charry.jpg","orange.jpg"]
+ const body=document.body;
+ const ul=document.createElement("ul");
+ body.appendChild(ul)
 
-const fruitList = document.getElementbyid('fruit')
+ for(let i=0 ; i<fruits.length ; i++){
+    const li=document.createElement("li");
+    const img=document.createElement("img")
+    li.textContent=fruits[i]
+    img.src=img_array[i];
+    img.style.width="100px";
+    img.style.height="100px";
 
-Afruits.forEach(fruit => {
-    const listItem = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = fruitImages[fruit.toLowerCase()];
-    img.alt = fruit;
+    ul.appendChild(li)
+    ul.appendChild(img)
 
-    const caption = document.createElement('p');
-    caption.textContent = fruit.charAt(0).toUpperCase() + fruit.slice(1);
-
-
-    listItem.appendChild(img);
-    listItem.appendChild(caption);
-
-
-    fruitList.appendChild(listItem);
-});
-
-const fruitImages = {
-    apple: "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg",
-    banana: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
-    cherry: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Cherry_Stella444.jpg",
-    grape: "https://upload.wikimedia.org/wikipedia/commons/3/36/Kyoho-grape.jpg",
-    orange: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg"
-};
+ }
